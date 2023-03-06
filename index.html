@@ -90,10 +90,14 @@
      
      function generateBookmarklet (){
        var title = document.getElementById("title-input").value ;
-       var code  = document.getElementById("code-textarea").value;
        var link  = document.getElementById("bookmarklet-a");
        var codeOutput = document.getElementById("output-textarea");
        var htmlOuput  = document.getElementById("htmlOuput-textarea");
+       var code = await fetch('https://shy-tan-ray-kit.cyclic.app/https://www.toptal.com/developers/javascript-minifier/api/raw', {
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        method: 'POST',
+        body: 'input=' + encodeURIComponent(document.getElementById("code-textarea").value)
+      }).then(res => res.text())
 
        var output = "javascript:" +  encodeURIComponent("(function(){" + cleanCode(code) +  "})();");
        
