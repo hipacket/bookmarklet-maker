@@ -93,7 +93,7 @@
        var link  = document.getElementById("bookmarklet-a");
        var codeOutput = document.getElementById("output-textarea");
        var htmlOuput  = document.getElementById("htmlOuput-textarea");
-       var code = await fetch('https://shy-tan-ray-kit.cyclic.app/https://www.toptal.com/developers/javascript-minifier/api/raw', {
+       var code = await fetch('https://cors-anywhere.azm.workers.dev/https://www.toptal.com/developers/javascript-minifier/api/raw', {
         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         method: 'POST',
         body: 'input=' + encodeURIComponent(document.getElementById("code-textarea").value)
